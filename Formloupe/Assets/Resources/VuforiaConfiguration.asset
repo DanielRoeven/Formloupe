@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
-    vuforiaLicenseKey: 
+    vuforiaLicenseKey: AWGmr4H/////AAABmem0RnB5jEMym7tLDlwXhvIpjidXUDnaW8awTOicoffjuqfBFVRMUsPwvAPJKdiB0OgbYADxSum7NHwQU9NePOmZfTajn/MQTV7Sj6C67KQZ+y5Q5mnoIXJB9pqwB+bTcVKuuigzL7hJtMGuSc8AKJBNuBmASxx+vLysHCRJISjx4HYGKyNh0S89lOpJZk81uYGOMjDGVMWYAYtSeVf+gJAHBmnEQioY5jIUgRvSMyjYA2V9mzKsWP+5yz0Q/35ZzUCBUlFzXJ3GSkvjJ1PQS8pL50e1yJk8YxXiLruXmHVahShFkIDO1GkFevoqlaT++YW7B4/DSqDjA9keLZIP+i3O9OERri9/7+38JlhrABSl
     ufoLicenseKey: QVQzUWo4VC8vLy8vQUFBQUtOaTdURFRxb1U1TnNSZ29OWERYaFgxWS9pWk9tQnAzb0lkNEo1d1NycHYzRE4rMFFTd0JHSTgxdXo4TGZ4K2VteHkxdlZVTi85Ris4SmI3Y3lLN3RkWmY3d0x3UjB4bEF3ejN6UWtUdHUzcUJxdE5SYWJRUVY3SDVnRDRib1BOQjlwWEFXRGFlWnVmWXQ2RHBBUk5XcWZhRlozcDhER1FBK3ZwTlpra3k0YXNxNXhsQlVBRk9ubWQvbjUySzZ1OTZQVXlUZTZ5WFhEV0FZR0RzNzljRjFwSjhyemQ1NWNlTHNLRXRSYk5pYlBVQUNqaGt1N0dyU1Q0Y3pNOXFMMDNKSXN2a0dVSWpMK1hsd2RzTnE2STVRM21YNVFkUWN6L3VRdWRIamNLeFRoMy9EVkxYZnIvZVY4bUJVc3IvQVp5Yml6NFpXS214RGZ4UW9Qc2grN0hsNnpxellQcTZiNGpsOGFaVENmR2hTQWg=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
     maxSimultaneousImageTargets: 1
     maxSimultaneousObjectTargets: 1
     useDelayedLoadingObjectTargets: 0
-    version: 1.0.0
+    version: 8.1.7
     eulaAcceptedVersions: '{"Values":["0.0","8.0","8.1"]}'
   digitalEyewear:
     cameraOffset: 0.06
@@ -48,8 +48,9 @@ MonoBehaviour:
   videoBackground:
     clippingMode: 0
     numDivisions: 2
-    videoBackgroundShader: {fileID: 0}
-    matteShader: {fileID: 0}
+    videoBackgroundShader: {fileID: 4800000, guid: f40623b353e2f1943b1b3ba42975db7a,
+      type: 3}
+    matteShader: {fileID: 4800000, guid: 66d0d78a3000021448b598bb54a3bfdf, type: 3}
     videoBackgroundEnabled: 1
   deviceTracker:
     autoInitTracker: 0
@@ -63,6 +64,6 @@ MonoBehaviour:
     autoInitTracker: 0
     autoStartTracker: 0
   webcam:
-    deviceNameSetInEditor: 
+    deviceNameSetInEditor: Microsoft Camera Rear
     turnOffWebCam: 0
     renderTextureLayer: 30
