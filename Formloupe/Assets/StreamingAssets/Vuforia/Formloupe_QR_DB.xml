@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="armchair_2_test" size="4.700000 4.011132" />
-    <ImageTarget name="armchair_1_test" size="4.700000 4.011132" />
-    <ImageTarget name="2" size="2.800000 2.800000" />
-    <ImageTarget name="1" size="2.800000 2.800000" />
-    <ImageTarget name="sofa_test" size="9.100000 3.220000" />
-    <ImageTarget name="chair_test" size="4.000000 4.142222" />
+    <ImageTarget name="stove" size="0.040000 0.037025" />
+    <ImageTarget name="office-table" size="0.092000 0.038710" />
+    <ImageTarget name="office-chair" size="0.038000 0.035360" />
+    <ImageTarget name="night-stand-2" size="0.052000 0.032511" />
+    <ImageTarget name="night-stand-1" size="0.052000 0.032511" />
+    <ImageTarget name="bed" size="0.092000 0.107781" />
+    <ImageTarget name="kitchen-workbench-2" size="0.092000 0.037457" />
+    <ImageTarget name="kitchen-workbench-1" size="0.092000 0.037457" />
+    <ImageTarget name="kitchen-sink" size="0.087000 0.040034" />
+    <ImageTarget name="kitchen-chair-4" size="0.032000 0.037920" />
+    <ImageTarget name="kitchen-chair-3" size="0.032000 0.037920" />
+    <ImageTarget name="kitchen-chair-2" size="0.032000 0.037920" />
+    <ImageTarget name="kitchen-chair-1" size="0.032000 0.038022" />
+    <ImageTarget name="fridge" size="0.042000 0.042687" />
+    <ImageTarget name="dining-table" size="0.092000 0.044995" />
+    <ImageTarget name="corner-sofa-2" size="0.112000 0.078133" />
+    <ImageTarget name="corner-sofa-1" size="0.112000 0.078071" />
+    <ImageTarget name="coffee-table" size="0.064000 0.030019" />
+    <ImageTarget name="cabinet-2" size="0.069000 0.039829" />
+    <ImageTarget name="cabinet-1" size="0.069000 0.039829" />
+    <ImageTarget name="armchair-2" size="0.039000 0.033284" />
+    <ImageTarget name="armchair-1" size="0.039000 0.033284" />
+    <ImageTarget name="3-seat-sofa" size="0.112000 0.040533" />
+    <ImageTarget name="2-seat-sofa" size="0.080000 0.040396" />
   </Tracking>
 </QCARConfig>
