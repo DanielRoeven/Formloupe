@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="KitchenChairPixelStroke" size="0.032000 0.037920" />
+    <ImageTarget name="BedSolidStroke" size="0.092000 0.110801" />
+    <ImageTarget name="BedPixelStroke" size="0.092000 0.110801" />
     <ImageTarget name="kitchen-workbench-2" size="0.092000 0.037457" />
     <ImageTarget name="kitchen-workbench-1" size="0.092000 0.037457" />
     <ImageTarget name="dining-table" size="0.092000 0.044995" />
