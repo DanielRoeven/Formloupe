@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="bigQR-2seatsofa" size="0.080000 0.042599" />
+    <ImageTarget name="bigQR-bed" size="0.098000 0.115550" />
+    <ImageTarget name="bigQR-officetable" size="0.092000 0.044805" />
+    <ImageTarget name="bigQR-kitchensink" size="0.087000 0.041371" />
+    <ImageTarget name="bigQR-kitchenworkbench-2" size="0.092000 0.041016" />
+    <ImageTarget name="bigQR-kitchenworkbench-1" size="0.092000 0.040965" />
+    <ImageTarget name="bigQR-diningtable" size="0.092000 0.049421" />
+    <ImageTarget name="bigQR-3seatsofa" size="0.112000 0.044912" />
+    <ImageTarget name="bigQR-cornersofa-2" size="0.112000 0.078900" />
+    <ImageTarget name="bigQR-cabinet-2" size="0.069000 0.042129" />
+    <ImageTarget name="bigQR-cabinet-1" size="0.069000 0.041763" />
+    <ImageTarget name="bigQR-cornersofa-1" size="0.112000 0.080172" />
     <ImageTarget name="KitchenChairPixelStroke" size="0.032000 0.037920" />
     <ImageTarget name="BedSolidStroke" size="0.092000 0.110801" />
     <ImageTarget name="BedPixelStroke" size="0.092000 0.110801" />
