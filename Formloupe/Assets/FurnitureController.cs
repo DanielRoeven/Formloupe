@@ -19,13 +19,13 @@ public class FurnitureController : MonoBehaviour
         
     }
 
-    public void UpdateMaterial(Material material)
+    public void UpdateMaterial(Material material, string materialTypeComponents)
     {
         foreach (GameObject Furniture in Furnitures)
         {
-            foreach (Transform SoftComponent in Furniture.transform.Find("SoftComponents"))
+            foreach (Transform component in Furniture.transform.Find(materialTypeComponents))
             {
-                SoftComponent.gameObject.GetComponent<Renderer>().material = material;
+                component.gameObject.GetComponent<Renderer>().material = material;
             }
         }
     }

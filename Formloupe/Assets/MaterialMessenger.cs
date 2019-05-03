@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class MaterialMessenger : MonoBehaviour
@@ -25,6 +26,7 @@ public class MaterialMessenger : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
     }
     // Update is called once per frame
     void Update()
@@ -36,11 +38,13 @@ public class MaterialMessenger : MonoBehaviour
         Debug.Log("Arrived: " + msg);
 
         string id = IDFromMessage(msg);
-        Material newMaterial = MaterialFromID(id);
 
-        foreach (GameObject Tracker in Trackers)
+        if (id != "0")
         {
-            Tracker.GetComponent<FurnitureController>().UpdateMaterial(newMaterial);
+            foreach (GameObject Tracker in Trackers)
+            {
+                Tracker.GetComponent<FurnitureController>().UpdateMaterial(MaterialFromID(id), MaterialTypeComponentsFromID(id));
+            }
         }
     }
 
@@ -97,6 +101,47 @@ public class MaterialMessenger : MonoBehaviour
                 return Base;
             default:
                 return Base;
+        }
+    }
+
+    string MaterialTypeComponentsFromID(string id)
+    {
+        switch (id)
+        {
+            case "188718099":
+                return "HardComponents"; //PinewoodUntreated;
+            case "23321231217":
+                return "HardComponents"; //PinewoodCinnamon;
+            case "10114931217":
+                return "HardComponents"; //PinewoodCoffee;
+            case "4314431217":
+                return "HardComponents"; //AluminiumGrey;
+            case "176532217":
+                return "HardComponents"; //AluminiumWhite;
+            case "498731217":
+                return "HardComponents"; //SteelBlack;
+            case "1715938131":
+                return "MediumComponents"; //LeatherAsh;
+            case "15413242131":
+                return "MediumComponents"; //LeatherCoffee;
+            case "6510335217":
+                return "MediumComponents"; //LeatherLatte;
+            case "2027235217":
+                return "MediumComponents"; //SuedeLatte;
+            case "8212131217":
+                return "SoftComponents"; //CottonBeige;
+            case "21816530217":
+                return "SoftComponents"; //CottonBlue;
+            case "13711735217":
+                return "HardComponents"; //AcrylicWhite;
+            case "223031217":
+                return "HardComponents"; //AcrylicBlack;
+            case "15112031217":
+                return "HardComponents"; //AcrylicTransparent;
+            case "0":
+                return "HardComponents"; //Base;
+            default:
+                return "HardComponents"; //Base;
         }
     }
 }
