@@ -19,7 +19,8 @@ public class MaterialMessenger : MonoBehaviour
     public Material AcrylicBlack;
     public Material AcrylicTransparent;
     public Material Base;
-    public GameObject BedTracker;
+
+    public GameObject[] Trackers;
 
     // Use this for initialization
     void Start()
@@ -36,12 +37,13 @@ public class MaterialMessenger : MonoBehaviour
 
         string id = IDFromMessage(msg);
         Material newMaterial = MaterialFromID(id);
-        GameObject[] SoftComponents = BedTracker.GetComponent<BedController>().getSoftComponents();
-        foreach (GameObject SoftComponent in SoftComponents)
+
+        foreach (GameObject Tracker in Trackers)
         {
-            SoftComponent.GetComponent<Renderer>().material = newMaterial;
+            Tracker.GetComponent<FurnitureController>().UpdateMaterial(newMaterial);
         }
     }
+
     // Invoked when a connect/disconnect event occurs. The parameter 'success'
     // will be 'true' upon connection, and 'false' upon disconnection or
     // failure to connect.
