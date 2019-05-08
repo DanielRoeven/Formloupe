@@ -36,13 +36,16 @@ public class FurnitureController : MonoBehaviour
         Furnitures[VisibleFurniture].SetActive(true);
     }
 
-    public void UpdateMaterial(Material material, string materialTypeComponents)
+    public void UpdateMaterial(Material Material, string MaterialTypeComponents)
     {
-        foreach (GameObject Furniture in Furnitures)
+        if (MaterialTypeComponents != "")
         {
-            foreach (Transform component in Furniture.transform.Find(materialTypeComponents))
+            foreach (GameObject Furniture in Furnitures)
             {
-                component.gameObject.GetComponent<Renderer>().material = material;
+                foreach (Transform component in Furniture.transform.Find(MaterialTypeComponents))
+                {
+                    component.gameObject.GetComponent<Renderer>().material = Material;
+                }
             }
         }
     }
