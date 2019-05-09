@@ -59,7 +59,7 @@ public class MaterialMessenger : MonoBehaviour
     // Invoked when a line of data is received from the serial device
     void OnMessageArrived(string msg)
     {
-
+        Debug.Log(msg);
         // Get reader nr. from serial message
         string Reader = msg.Substring(1, 1);
         
