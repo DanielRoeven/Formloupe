@@ -42,6 +42,12 @@ public class MaterialMessenger : MonoBehaviour
     private Material ActiveReader2Mat;
     private Material ActiveReader3Mat;
 
+    public AudioClip metalSound;
+    public AudioClip woodSound;
+    public AudioClip plasticSound;
+    public AudioClip fabricSound;
+    public AudioClip leatherSound;
+
     // Use this for initialization
     void Start()
     {
@@ -86,7 +92,7 @@ public class MaterialMessenger : MonoBehaviour
  
             // Set the material type to the most recently added material of that type
             // TODO: make interface in case of clash
-            SetMaterial(PreviousMaterial, PreviousMaterialTypeComponents);
+            SetMaterial(PreviousMaterial, PreviousMaterialTypeComponents, PreviousMaterialOfReader);
         }
         else
         {
@@ -101,6 +107,8 @@ public class MaterialMessenger : MonoBehaviour
             // TODO: make interface in case of clash
             SetMaterial(Material, MaterialTypeComponents);
         }
+
+        PlaySound(Id);
     }
 
     // Invoked when a connect/disconnect event occurs. The parameter 'success'
@@ -284,11 +292,11 @@ public class MaterialMessenger : MonoBehaviour
     }
 
     // Set material type components to a given material
-    void SetMaterial(Material Material, string MaterialTypeComponents)
+    void SetMaterial(Material Material, string MaterialTypeComponents, Material OverrideMateral = null)
     {
         foreach (GameObject Tracker in Trackers)
         {
-            Tracker.GetComponent<FurnitureController>().UpdateMaterial(Material, MaterialTypeComponents);
+            Tracker.GetComponent<FurnitureController>().UpdateMaterial(Material, MaterialTypeComponents, OverrideMateral);
         }
     }
 
@@ -383,4 +391,76 @@ public class MaterialMessenger : MonoBehaviour
                 return "HardComponents"; //Base;
         }
     }
-}
+
+    private void PlaySound(string id)
+    {
+        AudioSource audio = GetComponent<AudioSource>();
+        switch (id)
+        {
+            case "188718099":
+                audio.clip = woodSound; //PinewoodUntreated;
+                audio.Play();
+                break;
+            case "23321231217":
+                audio.clip = woodSound; //PinewoodCinnamon;
+                audio.Play();
+                break;
+            case "10114931217":
+                audio.clip = woodSound; //PinewoodCoffee;
+                audio.Play();
+                break;
+            case "4314431217":
+                audio.clip = metalSound; //AluminiumGrey;
+                audio.Play();
+                break;
+            case "176532217":
+                audio.clip = metalSound; //AluminiumWhite;
+                audio.Play();
+                break;
+            case "498731217":
+                audio.clip = metalSound; //SteelBlack;
+                audio.Play();
+                break;
+            case "1715938131":
+                audio.clip = leatherSound; //LeatherAsh;
+                audio.Play();
+                break;
+            case "15413242131":
+                audio.clip = leatherSound; //LeatherCoffee;
+                audio.Play();
+                break;
+            case "6510335217":
+                audio.clip = leatherSound; //LeatherLatte;
+                audio.Play();
+                break;
+            case "2027235217":
+                audio.clip = leatherSound; //SuedeLatte;
+                audio.Play();
+                break;
+            case "8212131217":
+                audio.clip = fabricSound; //CottonBeige;
+                audio.Play();
+                break;
+            case "21816530217":
+                audio.clip = fabricSound; //CottonBlue;
+                audio.Play();
+                break;
+            case "13711735217":
+                audio.clip = plasticSound; //AcrylicWhite;
+                audio.Play();
+                break;
+            case "223031217":
+                audio.clip = plasticSound; //AcrylicBlack;
+                audio.Play();
+                break;
+            case "15112031217":
+                audio.clip = plasticSound; //AcrylicTransparent;
+                audio.Play();
+                break;
+            case "0":
+                break;
+            default:
+                break;
+        }
+        }
+    }

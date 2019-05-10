@@ -60,7 +60,7 @@ public class FurnitureController : MonoBehaviour
     }
 
     // Function called by material messenger, when new swatch read
-    public void UpdateMaterial(Material Material, string MaterialTypeComponents)
+    public void UpdateMaterial(Material Material, string MaterialTypeComponents, Material OverrideMaterial = null)
     {
         if (MaterialTypeComponents == "")
         {
@@ -73,6 +73,11 @@ public class FurnitureController : MonoBehaviour
             SetMaterialTypeFlag(MaterialTypeComponents, false);
             SetMaterial(Material, MaterialTypeComponents);
         }
+        else if(OverrideMaterial != null && MaterialTypeIsSetToMaterial(MaterialTypeComponents, OverrideMaterial))
+        {
+            SetMaterialTypeFlag(MaterialTypeComponents, true);
+            SetMaterial(Material, MaterialTypeComponents);
+        }
         else if (IsApplicableMaterial(Material, MaterialTypeComponents) && GetMaterialTypeFlag(MaterialTypeComponents))
         {
             // Material type has already been applied, ask to override with checkbox
@@ -82,6 +87,23 @@ public class FurnitureController : MonoBehaviour
         {
             SetMaterialTypeFlag(MaterialTypeComponents, true);
             SetMaterial(Material, MaterialTypeComponents);
+        }
+    }
+
+    private bool MaterialTypeIsSetToMaterial(string MaterialTypeComponents, Material Material)
+    {
+        switch (MaterialTypeComponents)
+        {
+            case "HardComponents":
+                return (HasHardMaterial && HardMaterial.name == Material.name);
+            case "MediumComponents":
+                return (HasMediumMaterial && MediumMaterial.name == Material.name);
+            case "SoftComponents":
+                return (HasSoftMaterial && SoftMaterial.name == Material.name);
+            case "AccessoryComponents":
+                return (HasAccessoryMaterial && AccessoryMaterial.name == Material.name);
+            default:
+                throw new System.ArgumentException("Invalid Material Type");
         }
     }
 
