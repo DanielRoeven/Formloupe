@@ -20,12 +20,15 @@
 
 #include <SPI.h>
 #include <MFRC522.h>
+#include "Adafruit_NeoPixel.h"
 
 #define SS_1_PIN        10         // Configurable, take an unused pin, only HIGH/LOW required
 #define SS_2_PIN        8          // Configurable, take an unused pin, only HIGH/LOW required
 #define SS_3_PIN        7          // Configurable, take an unused pin, only HIGH/LOW required
 #define SS_4_PIN        6          // Configurable, take an unused pin, only HIGH/LOW required
 #define RST_PIN         9          // Pin 9 is same as ICSP pin 5
+#define LED_COUNT       120
+#define LED_PIN         4
 
 #define NR_OF_READERS   4
 
@@ -35,16 +38,23 @@ MFRC522 mfrc522[NR_OF_READERS];   // Create MFRC522 instance.
 
 String uids[] = {"0", "0", "0", "0"}; // Array to store most recently read values
 
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
+
+
+
 /**
    Initialize.
 */
 void setup() {
-
+  
   Serial.begin(9600); // Initialize serial communications with the PC
   while (!Serial);    // Do nothing if no serial port is opened (added for Arduinos based on ATMEGA32U4)
 
   SPI.begin();        // Init SPI bus
-
+  
+  strip.begin();   // Initialize as  OUTPUT
+ strip.clear();    // Initialize all pixels to 'off'
+ strip.show();  // turn neopixels off
   for (uint8_t reader = 0; reader < NR_OF_READERS; reader++) {
     mfrc522[reader].PCD_Init(ssPins[reader], RST_PIN); // Init each MFRC522 card
     Serial.print(F("Reader "));
@@ -59,9 +69,16 @@ void setup() {
 */
 void loop() {
 
+
+  for (int i = 0; i < LED_COUNT; i++)
+    {
+    strip.setPixelColor(i, 255, 255, 255);
+    }
+   strip.show();
+
   for (uint8_t reader = 0; reader < NR_OF_READERS; reader++) {
 
-    // Store if new tag present
+    // Store if new tag presentz
     bool newTag = mfrc522[reader].PICC_IsNewCardPresent();
 
     // Store if new tag successfully read
