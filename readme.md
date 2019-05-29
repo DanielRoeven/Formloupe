@@ -12,6 +12,16 @@
 - Arduino Leonardo
 - RC522 RFID Readers
 
+Will send read / removed tags over serial to the COM port 3 on the Surface.
+Messages there are read by Unity app.
+
+### Arduino Pinout
+
+Plug Arduino into surface with USB cable.
+Multiple RFID readers talk to Arduino over SPI.
+
+![Pinout Formloupe Arduino Leonardo and 4 x RC522](Pinout Formloupe.png)
+
 ## RFID Tag - Material Mapping
 
 - 188718099 - Pinewood Untreated

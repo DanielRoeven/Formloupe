@@ -52,9 +52,9 @@ void setup() {
 
   SPI.begin();        // Init SPI bus
   
-  strip.begin();   // Initialize as  OUTPUT
- strip.clear();    // Initialize all pixels to 'off'
- strip.show();  // turn neopixels off
+  strip.begin();  // Initialize as  OUTPUT
+  strip.clear();  // Initialize all pixels to 'off'
+  strip.show();   // turn neopixels off
   for (uint8_t reader = 0; reader < NR_OF_READERS; reader++) {
     mfrc522[reader].PCD_Init(ssPins[reader], RST_PIN); // Init each MFRC522 card
     Serial.print(F("Reader "));
